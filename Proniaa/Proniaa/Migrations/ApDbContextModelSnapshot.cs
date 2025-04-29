@@ -10,7 +10,7 @@ using Proniaa.DAL;
 
 namespace Proniaa.Migrations
 {
-    [DbContext(typeof(ApDbContext))]
+    [DbContext(typeof(AppDbContext))]
     partial class ApDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

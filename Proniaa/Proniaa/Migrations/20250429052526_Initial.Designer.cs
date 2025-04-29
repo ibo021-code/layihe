@@ -11,7 +11,7 @@ using Proniaa.DAL;
 
 namespace Proniaa.Migrations
 {
-    [DbContext(typeof(ApDbContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20250429052526_Initial")]
     partial class Initial
     {

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
 using Proniaa.DAL;
 using Proniaa.Models;
 using Proniaa.ViewModels;
@@ -15,7 +14,7 @@ namespace Proniaa.Controllers
         }
         public IActionResult Index()
         {
-            
+
             List<Slide> slides = new List<Slide>
             {
                 new Slide()
@@ -47,14 +46,13 @@ namespace Proniaa.Controllers
                 },
 
             };
-            AppDbContext context = new AppDbContext();
             _context.Slides.AddRange(slides);
             _context.SaveChanges();
             HomeVM homeVM = new HomeVM
             {
                 Slides = slides.OrderBy(s => s.Order).ToList()
             };
-            
+
 
             return View(homeVM);
         }

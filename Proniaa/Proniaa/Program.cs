@@ -10,13 +10,13 @@ namespace Proniaa
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AppDbContext>(opt=>
+            builder.Services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseSqlServer("Server=IBRAHIM\\SQLEXPRESS;database=Proniaa;trusted_connection=true;integrated security=true;TrustServerCertificate=true;");
             }
 
             );
-               
+
             var app = builder.Build();
 
             app.UseStaticFiles();
