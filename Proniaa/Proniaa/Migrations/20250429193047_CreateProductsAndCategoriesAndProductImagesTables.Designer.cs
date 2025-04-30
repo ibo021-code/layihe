@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proniaa.DAL;
 
@@ -11,9 +12,11 @@ using Proniaa.DAL;
 namespace Proniaa.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class ApDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250429193047_CreateProductsAndCategoriesAndProductImagesTables")]
+    partial class CreateProductsAndCategoriesAndProductImagesTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,7 +45,7 @@ namespace Proniaa.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("categories");
                 });
 
             modelBuilder.Entity("Proniaa.Models.Product", b =>
@@ -81,7 +84,7 @@ namespace Proniaa.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("products");
                 });
 
             modelBuilder.Entity("Proniaa.Models.ProductImage", b =>
