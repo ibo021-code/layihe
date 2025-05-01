@@ -20,6 +20,7 @@ namespace Proniaa.Controllers
                 .OrderBy(s => s.Order)
                 .Take(2)
                 .ToList(),
+
                 Products = _context.Products
                 .Take(8)
                 .Include(p => p.ProductImages.Where(x => x.IsPrimary != null))
